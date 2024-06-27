@@ -12,3 +12,19 @@ def solution(s):
     if l != r:
         answer = False
     return answer
+
+def solution(s):
+    answer = True
+    stack = []
+    for c in s:
+        if c == ')':
+            if stack:
+                stack.pop()
+            else:
+                answer = False
+                break 
+        else:
+            stack.append(c)
+    if stack:
+        answer = False
+    return answer
