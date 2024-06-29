@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+import sys
+input = sys.stdin.readlines
+user_input = input()  # input은 항상 문자열
+N, K = user_input[0].strip().split()
+arr = user_input[1].strip().split()
+
+def delele(K,arr):
+	cnt = 0
+	for a in arr:
+		if K not in a:
+			cnt += 1
+	return cnt
+print(delele(K,arr))
