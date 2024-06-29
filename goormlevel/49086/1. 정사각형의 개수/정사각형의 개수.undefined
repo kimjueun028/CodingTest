@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+import sys
+input = sys.stdin.readline
+user_input = input()
+user_input = int(user_input)
+def rec_total(N):
+	cnt = 0
+	for i in range(N):
+		cnt += (N-i)**2
+	return cnt
+print(rec_total(user_input))
