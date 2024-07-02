@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+import sys
+input = sys.stdin.readline
+N = int(input())
+temp = []
+x = N
+while x:
+	temp.append(x%2)
+	x = x//2
+temp = temp[::-1]
+temp = map(str, temp)
+print(''.join(temp))
+
