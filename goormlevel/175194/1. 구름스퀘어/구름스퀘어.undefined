@@ -1,0 +1,20 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+import sys
+input = sys.stdin.readlines
+user_input = input()
+N = int(user_input[0].strip())
+user_input = user_input[1:]
+user_input = [list(map(int, s.strip().split())) for s in user_input]
+
+user_input = sorted(user_input, key=lambda x : x[1], reverse = False)
+
+recent_end = 0
+cnt = 0
+for start,end in user_input:
+	if start > recent_end:
+		cnt += 1
+		recent_end = end
+		
+print(cnt)
+
