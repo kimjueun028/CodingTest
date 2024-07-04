@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+# UTF-8 encoding when using korean
+import sys
+input = sys.stdin.readline
+N = int(input())
+
+cnt = 0
+arr = [14,7,1]
+
+for i in arr:
+	cnt += N//i
+	N = N%i
+
+print(cnt)
