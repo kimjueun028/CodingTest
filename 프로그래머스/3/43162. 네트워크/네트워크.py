@@ -2,15 +2,16 @@ def solution(n, computers):
     answer = 0
     visited = [False for _ in range(n)]
     for i in range(n):
-        if not visited[i]:
-            queue = [i]
-            while queue: #추가하고 방문한 애는 안감
-                visit = queue.pop(0)
-                if not visited[visit]:
-                    for j in range(n):
-                        if j!=visit and computers[visit][j] == 1:
-                            queue.append(j)
-                    visited[visit] = True
+        if visited[i] == False:
             answer += 1
-            
+            # 연결 시작
+            queue = [i]  # start // 방문예정목록
+            while queue: 
+                curr = queue.pop(0)
+                visited[curr] = True
+                for j in range(len(computers[curr])):
+                    if computers[curr][j] == 1 and visited[j] == False:
+                        queue.append(j)
+                        visited[j] = True  # 방문처리
+                        
     return answer
