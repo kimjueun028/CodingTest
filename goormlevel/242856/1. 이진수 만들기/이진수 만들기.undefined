@@ -2,13 +2,27 @@
 # UTF-8 encoding when using korean
 import sys
 input = sys.stdin.readline
-N = int(input())
+user_input = input()
+N = int(user_input)
+
 temp = []
-x = N
-while x:
-	temp.append(x%2)
-	x = x//2
+while N:
+	temp.append(N%2)
+	N = N//2
+
 temp = temp[::-1]
 temp = map(str, temp)
 print(''.join(temp))
 
+
+# import sys
+# input = sys.stdin.readline
+# N = int(input())
+# temp = []
+# x = N
+# while x:
+# 	temp.append(x%2)
+# 	x = x//2
+# temp = temp[::-1]
+# temp = map(str, temp)
+# print(''.join(temp))
