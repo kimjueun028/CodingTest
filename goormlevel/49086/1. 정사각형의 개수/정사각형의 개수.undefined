@@ -3,10 +3,19 @@
 import sys
 input = sys.stdin.readline
 user_input = input()
-user_input = int(user_input)
-def rec_total(N):
-	cnt = 0
-	for i in range(N):
-		cnt += (N-i)**2
-	return cnt
-print(rec_total(user_input))
+N = int(user_input)
+cnt = 0
+for i in range(0, N):
+	cnt += (N-i)**2
+print(cnt)
+
+# import sys
+# input = sys.stdin.readline
+# user_input = input()
+# user_input = int(user_input)
+# def rec_total(N):
+# 	cnt = 0
+# 	for i in range(N):
+# 		cnt += (N-i)**2
+# 	return cnt
+# print(rec_total(user_input))
