@@ -1,22 +1,49 @@
 # -*- coding: utf-8 -*-
 # UTF-8 encoding when using korean
+
 import sys
 input = sys.stdin.readline
-N, K = map(int,input().split())
-arr = map(int,input().split())
+N, K = map(int, input().strip().split())
+arr = list(map(int, input().strip().split()))
 
-# 기준 만들어주기
-def first_func(x): # 1의 개수
-	value = x
-	temp = []
+def count_one(v):
 	cnt = 0
-	while value:
-		remain = value%2
-		temp.append(remain)
-		value = value//2
-		cnt += remain
-	temp = temp[::-1]
-	return (cnt, x)  # 1순위, 2순위를 튜플로 묶어서 return
+	X = v
+	while X:
+		cnt += X%2
+		X = X//2
+	return (cnt, v)
 
-sort_arr = sorted(arr, key=first_func, reverse=True)  # key는 원소를 받아서 기준값을 return하는 함수를 넣어야해
-print(sort_arr[K-1])
+sorted_arr = sorted(arr, key=count_one, reverse=True)
+
+print(sorted_arr[K-1])
+
+
+
+
+
+
+
+
+
+
+# import sys
+# input = sys.stdin.readline
+# N, K = map(int,input().split())
+# arr = map(int,input().split())
+
+# # 기준 만들어주기
+# def first_func(x): # 1의 개수
+# 	value = x
+# 	temp = []
+# 	cnt = 0
+# 	while value:
+# 		remain = value%2
+# 		temp.append(remain)
+# 		value = value//2
+# 		cnt += remain
+# 	temp = temp[::-1]
+# 	return (cnt, x)  # 1순위, 2순위를 튜플로 묶어서 return
+
+# sort_arr = sorted(arr, key=first_func, reverse=True)  # key는 원소를 받아서 기준값을 return하는 함수를 넣어야해
+# print(sort_arr[K-1])
