@@ -3,20 +3,40 @@
 import sys
 input = sys.stdin.readline
 user_input = input()
-A, B = user_input.split()
+A, B = list(user_input.strip().split())
 
-def max_exp(X):
-	X = X.replace('+',')+(').replace('*',')*(').replace('-',')-(')
+def change(X):
+	X = X.replace('+',')+(').replace('-',')-(').replace('*',')*(')
 	X = '(' + X + ')'
 	X = X.replace('-(','+(-')
-	plus_split = X.split('+') # ['(10)*(3)', '(-10)']
+	plus_split = X.split('+')
 	plus_value = 0
-	for multi_split in plus_split:
-		multi_split = multi_split.split('*') # [(10), (3)] 
+	for multi_fo in plus_split:
+		element = multi_fo.split('*')
 		multi_value = 1
-		for num in multi_split:
+		for num in element:
 			multi_value *= int(num[1:-1])
 		plus_value += multi_value
 	return plus_value
+print(max(change(A), change(B)))
 
-print(max(max_exp(A),max_exp(B)))
+# import sys
+# input = sys.stdin.readline
+# user_input = input()
+# A, B = user_input.split()
+# def max_exp(X):
+# 	X = X.replace('+',')+(').replace('*',')*(').replace('-',')-(')
+# 	X = '(' + X + ')'
+# 	X = X.replace('-(','+(-')
+# 	plus_split = X.split('+') # ['(10)*(3)', '(-10)']
+# 	plus_value = 0
+# 	for multi_split in plus_split:
+# 		multi_split = multi_split.split('*') # [(10), (3)] 
+# 		multi_value = 1
+# 		for num in multi_split:
+# 			multi_value *= int(num[1:-1])
+# 		plus_value += multi_value
+# 	return plus_value
+
+# #print(max(max_exp(A),max_exp(B)))
+# print(max(eval(A),eval(B)))
