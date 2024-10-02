@@ -7,7 +7,7 @@ def solution(s):
             stack.append(i)
     return 0 if stack else 1
 
-
+# 틀림
 #     new_s = list(s)
     
 #     i = 0
