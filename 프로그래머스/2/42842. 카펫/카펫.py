@@ -1,8 +1,7 @@
 def solution(brown, yellow):
     grid = brown + yellow
-    for n in range(3, int(grid**0.5)+1):
-        if grid % n != 0:
-            continue
-        m = grid//n
-        if (n-2)*(m-2) == yellow:
-            return [m,n]
+    for c in range(3, grid):
+        if not grid % c:
+            r = grid//c
+            if (c-2)*(r-2) == yellow:
+                return [r,c]
