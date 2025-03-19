@@ -27,7 +27,7 @@ def solution(begin, target, words):
                     queue.append((''.join(l), answer))
                     visited[idx] = True
             idx += 1
-    return 0
+    return 
 
 '''
 최단경로를 구하는 거니까 bfs
